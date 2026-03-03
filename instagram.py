@@ -77,12 +77,31 @@ for word in tokens:
 texto_limpio = " ".join(tokens_limpios)
 
 # RESULTADOS
-print("\n________________________________________")
-print("TEXTO")
-print("________________________________________")
-print(texto_censurado)
-print("________________________________________")
-print("TEXTO LIMPIO PARA BUSCADOR")
-print("________________________________________")
-print(texto_limpio)
-print("\n________________________________________")
+
+if len(tokens) == 1 and (tokens[0] in malas_palabras or tokens[0] in stopwords):
+
+    print("\n________________________________________")
+    print("ERROR")
+    print("________________________________________")
+    print("La búsqueda no es válida.")
+    print("Ingrese una palabra relevante.")
+    print("________________________________________\n")
+
+else:
+
+    print("\n________________________________________")
+    print("TEXTO ORIGINAL")
+    print("________________________________________")
+    print(texto_original)
+
+    print("\n________________________________________")
+    print("TEXTO CENSURADO")
+    print("________________________________________")
+    print(texto_censurado)
+
+    print("\n________________________________________")
+    print("TEXTO LIMPIO PARA BUSCADOR")
+    print("________________________________________")
+    print(texto_limpio)
+
+    print("\n________________________________________")
